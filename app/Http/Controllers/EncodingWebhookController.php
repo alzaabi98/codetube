@@ -16,6 +16,9 @@ class EncodingWebhookController extends Controller
     
     public function handle(Request $request) {
 
+
+    	Log::info($request);
+
     	
     	$event = camel_case($request->event) ;
     	//$event = str_replace('-', '', $event);
@@ -28,11 +31,11 @@ class EncodingWebhookController extends Controller
     	
     }
 
+
     protected function videoEncoded(Request $request){
 
     	//lookup video
 
-    	Log::info($request);
 
     	$video = getVideoByFileName($request->original_filename) ;
 
