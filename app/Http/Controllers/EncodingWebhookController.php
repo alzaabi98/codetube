@@ -58,6 +58,8 @@ class EncodingWebhookController extends Controller
 
    		$video->processed_percentage = $request->progress ;
 
+   		$video->save();
+
 
     }
 
