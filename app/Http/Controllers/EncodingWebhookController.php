@@ -10,6 +10,7 @@ class EncodingWebhookController extends Controller
     
     public function handle(Request $request) {
 
+    	dd('test');
     	$event = camel_case($request->event) ;
     	//$event = str_replace('-', '', $event);
 
@@ -41,11 +42,12 @@ class EncodingWebhookController extends Controller
 
    		$video->processed_percentage = $request->progress ;
 
+
     }
 
     protected function getVideoByFileName($filename){
 
-    	return Video::where('vide_filename', $filename)->firstorFail();
+    	return Video::where('video_filename', $filename)->firstOrFail();
 
     }
     
