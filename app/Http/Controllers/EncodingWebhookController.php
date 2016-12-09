@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Video;
+use Illuminate\Http\Request;
 
 class EncodingWebhookController extends Controller
 {
@@ -12,6 +12,8 @@ class EncodingWebhookController extends Controller
 
     	$event = camel_case($request->event) ;
     	$event = str_replace('-', '', $event);
+
+    	dd($event);
 
     	if (method_exists($this, $event)) {
     		
