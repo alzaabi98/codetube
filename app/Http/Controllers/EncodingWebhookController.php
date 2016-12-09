@@ -12,14 +12,6 @@ class EncodingWebhookController extends Controller
 {
     
 
-    public function test() {
-
-    	return response()->json([
-    'name' => 'Abigail',
-    'state' => 'CA'
-		]);
-    	
-    }
     
     public function handle(Request $request) {
 
