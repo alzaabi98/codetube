@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 
-Route::post('/webhook/encoding','encodingWebhookController@handle') ;
+Route::post('/webhook/encoding','EncodingWebhookController@handle') ;
 Auth::routes();
 
 Route::get('/home', 'HomeController@index','encodingWebhookController@handle');
