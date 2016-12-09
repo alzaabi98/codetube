@@ -27,8 +27,8 @@ class EncodingWebhookController extends Controller
 
     	if (method_exists($this, $event)) {
     		
-    		//$this->{$event}($request) ;
-    		$this->videoEncoded($request);
+    		$this->{$event}($request) ;
+    		//$this->videoEncoded($request);
     	}
     	
     }
@@ -38,9 +38,9 @@ class EncodingWebhookController extends Controller
 
     	//lookup video
 
-    	return("yes");
+    	//return("yes");
 
-    	$video = getVideoByFileName($request->original_filename) ;
+   		$video = $this->getVideoByFileName($request->original_filename) ;
 
 
 
@@ -54,7 +54,7 @@ class EncodingWebhookController extends Controller
 
     public function encodingProgress(Request $request){
 
-   		$video = getVideoByFileName($request->original_filename) ;
+   		$video = $this->getVideoByFileName($request->original_filename) ;
 
    		$video->processed_percentage = $request->progress ;
 
