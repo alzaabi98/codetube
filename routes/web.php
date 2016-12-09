@@ -10,7 +10,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index','encodingWebhookController@handle');
-Route::post('webhook/encoding','EncodingWebhookController@handle') ;
+Route::post('/webhook/encoding','EncodingWebhookController@handle') ;
 
 
 Route::group(['middleware' => ['auth']],  function() {
