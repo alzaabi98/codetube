@@ -26,7 +26,7 @@ class EncodingWebhookController extends Controller
 
     	//lookup video
 
-
+    	Log::info($request);
 
     	$video = getVideoByFileName($request->original_filename) ;
 
