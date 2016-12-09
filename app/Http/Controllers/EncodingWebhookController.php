@@ -23,11 +23,12 @@ class EncodingWebhookController extends Controller
     	$event = camel_case($request->event) ;
     	//$event = str_replace('-', '', $event);
 
+    	return $event ;
 
-    	if (method_exists($this, $event)) {
+    	// if (method_exists($this, $event)) {
     		
-    		$this->{$event}($request) ;
-    	}
+    	// 	$this->{$event}($request) ;
+    	// }
     	
     }
 
