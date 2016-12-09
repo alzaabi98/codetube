@@ -27,8 +27,8 @@ class EncodingWebhookController extends Controller
 
     	if (method_exists($this, $event)) {
     		
-    		$this->{$event}($request) ;
-    		
+    		//$this->{$event}($request) ;
+    		$this->videoEncoded($request);
     	}
     	
     }
