@@ -23,12 +23,12 @@ class EncodingWebhookController extends Controller
     	$event = camel_case($request->event) ;
     	//$event = str_replace('-', '', $event);
 
-    	return $event ;
+    	//return $event ;
 
-    	// if (method_exists($this, $event)) {
+    	if (method_exists($this, $event)) {
     		
-    	// 	$this->{$event}($request) ;
-    	// }
+    		$this->{$event}($request) ;
+    	}
     	
     }
 
@@ -37,6 +37,7 @@ class EncodingWebhookController extends Controller
 
     	//lookup video
 
+    	return ("video encode");
 
     	$video = getVideoByFileName($request->original_filename) ;
 
