@@ -27,8 +27,8 @@ class EncodingWebhookController extends Controller
 
     	if (method_exists($this, $event)) {
     		
-    		//$this->{$event}($request) ;
-    		return("yes");
+    		$this->{$event}($request) ;
+    		
     	}
     	
     }
@@ -38,7 +38,7 @@ class EncodingWebhookController extends Controller
 
     	//lookup video
 
-    	
+    	return("yes");
 
     	$video = getVideoByFileName($request->original_filename) ;
 
