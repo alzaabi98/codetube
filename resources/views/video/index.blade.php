@@ -45,6 +45,8 @@
 
                             @endforeach
 
+                            {{ $video->links()}}
+
                         @else
 
                             you have no vidoes
