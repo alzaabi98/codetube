@@ -23,7 +23,15 @@
                                             <a href="/vidoes/{{ $video->uid}}">{{ $video->title}}</a>
                                             <div class="row">
                                                 <div class="col-sm-6">
-                                                    data
+                                                    @if (!$video->isProcessed())
+
+                                                        Processing ({{ $video->processedPercentage() ? $video->processedPercentage . '%' : 'starting up' }})
+            
+
+
+                                                    @else
+
+                                                    @endif
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <p>
