@@ -61,7 +61,7 @@ class Video extends Model
     		return config('codetube.buckets.videos') . '/default.jpg';
     	}
 
-		return config('codetube.buckets.videos') .'/' . $this->video_id . '1.jpg';
+		return config('codetube.buckets.videos') .'/' . $this->video_id . '_1.jpg';
 
     }
     
