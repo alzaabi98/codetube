@@ -13,7 +13,7 @@ class VideoController extends Controller
 
     public function index(Request $request) {
 
-    	$videos = $request->user()->videos()->latestFirst()->paginate(10);
+    	$videos = $request->user()->videos()->latestFirst()->paginate(2);
     	
     	
     	return view('video.index',[
