@@ -10,6 +10,18 @@ use App\Http\Requests\VideoUpdateRequest;
 class VideoController extends Controller
 {
     
+
+    public function index(Request $request) {
+
+    	$videos = $request->user()->videos()->latestFirst()->paginate(10);
+    	
+    	
+    	return view('video.index',[
+
+    		'videos' => $videos,
+    		]);
+    }
+    
     public function update(VideoUpdateRequest $request, Video $video) {
     	
     	$this->authorize('update', $video);

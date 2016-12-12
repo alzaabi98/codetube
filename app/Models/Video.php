@@ -42,5 +42,30 @@ class Video extends Model
     	return ('uid') ;
     }
     
+
+    public function scopeLatestFirst($query) {
+    	
+    	return $query->orderBy('created_at', 'Desc');
+    }
+
+
+    public function isProcessed() {
+    	
+    	return $this->processed ;
+    }
+
+
+    public function getThumbnail() {
+    	
+    	if (! $this->isProcessed() ) {
+    		return config('codetube.buckets.videos') . '/default.jpg';
+    	}
+
+		return config('codetube.buckets.videos') .'/' . $this->video_id . '1.jpg';
+
+    }
+    
+    
+    
     
 }
