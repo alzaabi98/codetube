@@ -25,7 +25,7 @@
                                                 <div class="col-sm-6">
                                                     @if (!$video->isProcessed())
 
-                                                        Processing ({{ $video->processedPercentage() ? $video->processedPercentage . '%' : 'starting up' }})
+                                                        Processing ({{ $video->processedPercentage() ? $video->processedPercentage() . '%' : 'starting up' }})
         
                                                     @else
                                                         <span> {{$video->created_at->toDateTimeString() }}</span>
