@@ -34,8 +34,18 @@
                                                         @endif
                                                     </p>
                                                     
-                                                    <form action="" method="post">
+                                                    <form action="/videos/{{$video->uid}}" method="post">
+
                                                         <a href="/videos/{{ $video->uid }}/edit" class="btn btn-info"> Edit</a>
+
+
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
+
+                                                        {{csrf_field()}}
+                                                        {{method_field('DELETE')}}
+
+                                 
+    
                                                     </form>
 
                                                 </div>

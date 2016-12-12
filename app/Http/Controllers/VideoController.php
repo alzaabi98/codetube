@@ -58,6 +58,20 @@ class VideoController extends Controller
 
     		return redirect()->back();
     }
+
+
+    public function delete(Video $video) {
+
+    	//authorize delete video
+
+    	$this->authorize('delete', $video);
+
+    	$video->delete();
+
+    	return redirect()->back();
+    	
+    }
+    
     
     public function store(Request $request) {
 

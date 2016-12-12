@@ -26,4 +26,11 @@ class VideoPolicy
         
     }
     
+
+
+    public function delete(User $user, Video $video) {
+
+        return $user->id === $video->channel->user_id ;
+        
+    }
  }
