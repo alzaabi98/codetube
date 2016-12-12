@@ -49,6 +49,12 @@ class Video extends Model
     }
 
 
+    public function processedPercentage() {
+
+    	return $this->processedPercentage ;
+    	
+    }
+    
     public function isProcessed() {
     	
     	return $this->processed ;
