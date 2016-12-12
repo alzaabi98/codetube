@@ -45,7 +45,8 @@
 
                             @endforeach
 
-                            {{ $video->links()}}
+                            {{ $videos->links() }}
+
 
                         @else
 
