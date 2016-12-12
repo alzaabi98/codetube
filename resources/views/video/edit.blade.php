@@ -8,7 +8,7 @@
                 <div class="panel-heading">Edit Video "{{$video->title}}"</div>
 
                 <div class="panel-body">
-                    <form action="/videos/{{$video->uid}}" method="put">
+                    <form action="/videos/{{$video->uid}}" method="post">
 
                         <div class="form-group{{$errors->has('title') ? ' has-error' : '' }}">
                             <label for="title">Title</label>
@@ -39,8 +39,8 @@
                         <div class="form-group{{$errors->has('visibility') ? ' has-error' : '' }}">
                             <label for="visibility">Visibility</label>
                             <select name="visibility" id="visibility" class="form-control">
-                                @foreach(['priavate', 'public', 'unlisted'] as $visibility)
-                                    <option value="$visibility"{{ $visibility == $video->visibility ? ' selected="selected"' : ''}}> {{ ucfirst($visibility) }}</option>
+                                @foreach(['private', 'public', 'unlisted'] as $visibility)
+                                    <option value="{{$visibility}}"{{ $visibility == $video->visibility ? ' selected="selected"' : ''}}> {{ ucfirst($visibility) }}</option>
                                 @endforeach
 
                             </select>
@@ -52,6 +52,21 @@
                                     </div>
                             @endif
                          </div>
+
+                         <div class="form-group" >
+                             <label for="allow_votes">
+                                 <input type="checkbox" name="allow_votes" id="allow_votes"{{$video->votesAllowed() ? ' checked="checked"' : ''}} > Allow votes
+                             </label>
+                         </div>
+
+
+                         <div class="form-group" >
+                             <label for="allow_comments">
+                                 <input type="checkbox" name="allow_comments" id="allow_comments"{{$video->commentsAllowed() ? ' checked="checked"' : ''}}> Allow Comments
+                             </label>
+                         </div>
+
+                        <button type="submit" class="btn btn-warning"> Update</button>
 
                         {{ csrf_field() }}
                         {{ method_field('PUT')}}

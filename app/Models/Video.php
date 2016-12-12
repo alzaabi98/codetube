@@ -71,6 +71,21 @@ class Video extends Model
 
     }
     
+
+
+    public function votesAllowed() {
+
+    	return (bool) $this->allow_votes;
+    	
+    }
+
+
+    public function commentsAllowed() {
+
+    	return (bool) $this->allow_comments;
+    	
+    }
+    
     
     
     
