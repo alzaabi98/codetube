@@ -23,14 +23,21 @@
                                             <a href="/vidoes/{{ $video->uid}}">{{ $video->title}}</a>
                                             <div class="row">
                                                 <div class="col-sm-6">
-                                                    @if (!$video->isProcessed())
+                                                    <p class="muted">
+                                                        @if (!$video->isProcessed())
 
                                                         Processing ({{ $video->processedPercentage() ? $video->processedPercentage() . '%' : 'starting up' }})
         
-                                                    @else
-                                                        <span> {{$video->created_at->toDateTimeString() }}</span>
+                                                        @else
+                                                            <span> {{$video->created_at->toDateTimeString() }}</span>
 
-                                                    @endif
+                                                        @endif
+                                                    </p>
+                                                    
+                                                    <form action="" method="post">
+                                                        <a href="/videos/{{ $video->uid }}/edit" class="btn btn-info"> Edit</a>
+                                                    </form>
+
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <p>

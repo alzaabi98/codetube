@@ -22,6 +22,19 @@ class VideoController extends Controller
     		]);
     }
     
+
+
+    public function edit(Video $video) {
+
+    	//authorize user
+
+    	return view('video.edit',[
+
+    		'video' => $video
+    		]);
+    	
+    }
+    
     public function update(VideoUpdateRequest $request, Video $video) {
     	
     	$this->authorize('update', $video);
