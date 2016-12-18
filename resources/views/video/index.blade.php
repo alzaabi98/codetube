@@ -15,12 +15,12 @@
                                 <div class="well">
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <a href="/vidoes/{{ $video->uid}}">
+                                            <a href="/videos/{{ $video->uid}}">
                                                 <img src="{{ $video->getThumbnail()}}" alt="{{$video->title}} thumbnail" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="col-sm-9">
-                                            <a href="/vidoes/{{ $video->uid}}">{{ $video->title}}</a>
+                                            <a href="/videos/{{ $video->uid}}">{{ $video->title}}</a>
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <p class="muted">
@@ -67,7 +67,7 @@
 
                         @else
 
-                            you have no vidoes
+                            you have no videos
 
                         @endif
                     </div>
