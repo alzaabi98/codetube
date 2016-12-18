@@ -44,7 +44,7 @@ class Channel extends Model
             return config('codetube.buckets.images') . '/profile/default.png';
         }
 
-        return config('codetube.buckets.images') . '/profile/' . $this->image_filename . 'png';
+        return config('codetube.buckets.images') . '/profile/' . $this->image_filename ;
 
          
      }
