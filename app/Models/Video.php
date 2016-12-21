@@ -86,6 +86,14 @@ class Video extends Model
     	
     }
     
+
+
+    public function isPrivate() {
+        
+
+        return $this->visibility === 'private';
+    }
+    
     
     
     
