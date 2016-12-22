@@ -122,7 +122,8 @@ class Video extends Model
 
     public function getStreamUrl() {
 
-        return config('codetube.buckets.videos') . '/' . $this->video->id . 'mp4' ;
+        return config('codetube.buckets.videos') . '/' . $this->id . 'mp4' ;
+
         
     }
     
