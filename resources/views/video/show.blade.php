@@ -5,14 +5,41 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
 
-            video player
 
-            @if( $video->isPrivate())
+
+            @if( $video->isPrivate() && Auth::check() && $video->ownedByUser(Auth::user()) )
                 <div class="alert alert-info">
                     your video is currently private . only you can see it . 
 
                 </div>
             @endif
+
+            @if($video->isProcessed() && $video->canBeAccessed(Auth::user()))
+
+                <video-player video-uid="{{$video->uid}}" video-url="{{ $video->getStreamUrl() }}" thumbnail-url="{{ $video->getThumbnail() }}">  </video-player>
+
+            @endif
+
+            @if( !$video->isProcessed() )
+
+                <div class="video-placeholder">
+                 <div class="video-placeholder__header">
+                        This video is processing. come back later
+                    </div>
+                    
+                </div>
+            
+            @elseif (!$video->canBeAccessed(Auth::user()))
+
+               <div class="video-placeholder">
+                    <div class="video-placeholder__header">
+                        This video is private
+                    </div>
+                    
+                </div>
+
+            @endif
+
             <div class="panel panel-default">
                 
 
