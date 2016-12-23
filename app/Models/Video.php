@@ -127,6 +127,20 @@ class Video extends Model
 
         
     }
+
+
+    public function views() {
+        
+        return $this->hasMany(VideoView::class);
+    }
+
+
+    public function viewCount() {
+        
+        return $this->views->count();
+    }
+    
+    
     
     
     
