@@ -27,6 +27,7 @@
 				player: null,
 				duration: null,
 
+
 			} 
 
 		} ,
@@ -39,6 +40,11 @@
 				}
 
 				return Math.round(this.player.currentTime()) === Math.round((10 * this.duration) / 100 );
+			},
+
+			createView() {
+
+				this.$http.post('videos/' + this.videoUid + '/views') ;
 			}
 
 		},
@@ -52,18 +58,23 @@
 
 		ready() {
 
-			this.plyaer = videojs('video') ;
+			
+			this.plyaer = videojs('video');
+
+
 			this.player.on('loadedmetadata',()=> {
 
 				this.duration = Math.round(this.player.duration() ) ;
 			})
 			setInterval(()=> {
 
-				if(this.hasHitQoutaView()) {
+				console.log(" i am working");
+				// if(this.hasHitQoutaView()) {
 
-					console.log('log a view') ;
+				// 	console.log('log a view') ;
+				// 	this.createView();
 
-				}
+				// }
 
 			},1000)
 		}
