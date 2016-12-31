@@ -11,11 +11,11 @@ class VideoCommentController extends Controller
     
     public function index(Video $video) {
     	
-    	return response()->json([
+    	// return response()->json([
 
-    		'name' =>  'abdulaziz al zaabi',
-    		'age' => 36.3 ,
-    	]);
+    	// 	'name' =>  'abdulaziz al zaabi',
+    	// 	'age' => 36.3 ,
+    	// ]);
     }
     
 }
