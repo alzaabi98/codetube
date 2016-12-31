@@ -46,7 +46,9 @@
                 <div class="panel-body">
                     <h4>{{$video->title}}</h4>
                     <div class="pull-right">
-                        video views
+                        video views11
+
+                        <video-voting video-uid="{{ $video->uid }}"></video-voting>
                     </div>
 
                     <div class="media">

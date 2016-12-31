@@ -15,6 +15,7 @@ class ChannelSettingsController extends Controller
 {
     
 
+    
 
     public function edit(Channel $channel) {
 

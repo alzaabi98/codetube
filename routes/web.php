@@ -16,6 +16,11 @@ Route::post('/webhook/encoding','EncodingWebhookController@handle') ;
 Route::get('videos/{video}','VideoController@show');
 
 Route::post('videos/{video}/views','VideoViewController@create');
+Route::get('/serach','SearchController@index');
+
+Route::get('/videos/{video}/comment', 'VideoCommentController@index');
+Route::get('/videos/{video}/votes','VideoVoteController@show');
+
 
 Route::group(['middleware' => ['auth']],  function() {
 
@@ -31,6 +36,9 @@ Route::group(['middleware' => ['auth']],  function() {
 
 	Route::get('/channel/{channel}/edit','ChannelSettingsController@edit');
 	Route::put('/channel/{channel}/edit','ChannelSettingsController@update');
+
+
+	Route::get('/channel/{channel}','ChannelSettingsController@edit');
 
 });
 

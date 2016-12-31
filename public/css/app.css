@@ -17,6 +17,22 @@
   left: 50%;
 }
 
+.video__voting {
+  font-size: 14px;
+}
+
+.video__voting-button {
+  color: #636b6f;
+}
+
+.video__voting-button:hover, .video__voting-button:focus {
+  text-decoration: none;
+}
+
+.video__voting-button-voted {
+  color: #3097D1;
+}
+
 .video-js .vjs-big-play-button:before, .video-js .vjs-control:before, .video-js .vjs-modal-dialog, .vjs-modal-dialog .vjs-modal-dialog-content {
   position: absolute;
   top: 0;

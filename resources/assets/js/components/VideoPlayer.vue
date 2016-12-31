@@ -56,10 +56,10 @@
 
 		} ,
 
-		ready() {
+		mounted() {
 
 			
-			this.plyaer = videojs('video');
+			this.player = videojs('video');
 
 
 			this.player.on('loadedmetadata',()=> {

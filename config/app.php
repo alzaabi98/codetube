@@ -169,6 +169,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Scout\ScoutServiceProvider::class,
+        Spatie\Fractal\FractalServiceProvider::class,
 
         //
 

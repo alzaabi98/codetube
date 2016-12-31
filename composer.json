@@ -11,7 +11,8 @@
         "aws/aws-sdk-php": "^3.19",
         "intervention/image": "^2.3",
         "laravel/scout": "^2.0",
-        "algolia/algoliasearch-client-php": "^1.13"
+        "algolia/algoliasearch-client-php": "^1.13",
+        "spatie/laravel-fractal": "^3.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
