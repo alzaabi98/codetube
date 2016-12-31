@@ -44,7 +44,7 @@
 
 			createView() {
 
-				this.$http.post('videos/' + this.videoUid + '/views') ;
+				this.$http.post('/videos/' + this.videoUid + '/views') ;
 			}
 
 		},
