@@ -68,13 +68,13 @@
 			})
 			setInterval(()=> {
 
-				console.log(" i am working");
-				// if(this.hasHitQoutaView()) {
+				//console.log(" i am working");
+				if(this.hasHitQoutaView()) {
 
-				// 	console.log('log a view') ;
-				// 	this.createView();
+				 	console.log('log a view') ;
+				 	this.createView();
 
-				// }
+				 }
 
 			},1000)
 		}
