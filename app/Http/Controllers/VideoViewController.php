@@ -13,12 +13,12 @@ class VideoViewController extends Controller
     public function create(Request $request,Video $video) {
 
 
-        return response()->json('null',200);
-        // return response()->json([
+       //return response()->json('ok',200);
+        return response()->json([
 
-        //  'name' =>  'abdulaziz al zaabi',
-        //  'age' => 36.3 ,
-        // ]);
+         'name' =>  'abdulaziz al zaabi',
+         'age' => 36.3 ,
+        ]);
 
     	// if (!$video->canBeAccessed($request->user())) {
 
